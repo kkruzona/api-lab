@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RedditService, Reddit } from './reddit.service';
+import { RedditService, Reddit, Children } from './reddit.service';
 
 
 @Component({
@@ -8,28 +8,17 @@ import { RedditService, Reddit } from './reddit.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  post?: Reddit;
+  post: Children[] = [];
   constructor(public postApi: RedditService){}
 
-  ngOnInit(){
-    this.posts.getPost().subscribe((data:Reddit)=>{
-      this.post = {...data};
-      // this.title = data.title;
-
-      // console.log(data.title)
-      // console.log(data.language);
-      // console.log(data.posts.length);
-      // console.log(data.posts[0].title);
-      // data.posts.forEach(post=>console.log(post.title));
-      // for(let post of data.posts){
-      //   console.log(post.title)
-      //   for(let tag of post.tags){
-      //     console.log('--'+tag);
-      //   }
-      // }
+  ngOnInit(): void{
+    this.postApi.getPost().subscribe((data:Reddit)=>{
+      this.post = data.data.children;
+      console.log(data.data.children[0].data.title)
+      console.log(data.data.children[0].data.thumbnail)
+      console.log(data.data.children[0].data.url)
     })
    }
-
   
   title = 'api-lab';
 }

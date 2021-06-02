@@ -1,4 +1,7 @@
-<div class="postListing" *ngFor="let data of datas">
-  <a href=`{{data.url_overridden_by_dest}}`><h1>{{data.title}}</h1></a>
-  <img src=`{{data.thumbnail}}`/>
+<div class="postListing" *ngFor="let child of post; let i = index">
+  <a href={{child.data.url}}><h1>{{child.data.title}}</h1></a>
+  <img src={{child.data.thumbnail}}/>
 </div>
+
+<!-- <ul class="posts-list" *ngFor="let child of post; let i = index"></ul>
+{{child.data.title}} -->
