@@ -1,27 +1,33 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 export interface Reddit {
   kind: string; 
-  data: Data[];
-  children: Children[];
+  data: {
+    modhash: '';
+    dist: number;
+    children: {
+          kind: string;
+          data: {
+              title: string;
+              thumbnail: string;
+              url_overridden_by_dest: string
+          };
+    };
+    after: string;
+    before: number;
+  };
 }
 
-interface Data {
-  modhash: '';
-  dist: number;
-  children: Children[];
-  after: string;
-  before: number;
-  title: string;
-  thumbnail: string;
-  url_overridden_by_dest: string;
-}
+// export interface Data {
+  
+// }
 
-interface Children {
-  kind: string;
-  data: Data[];
-}
+// export interface Children {
+//   kind: string;
+//   data: Data[];
+// }
 
 
 @Injectable({
