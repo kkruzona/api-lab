@@ -1,7 +1,10 @@
-<div class="postListing" *ngFor="let child of post; let i = index">
-  <a href={{child.data.url}}><h1>{{child.data.title}}</h1></a>
-  <img src={{child.data.thumbnail}}/>
+<div class="postArea">
+  <div class="postListings" *ngFor="let child of post; let i = index">
+    <img src={{child.data.thumbnail}}/>
+    <a href={{child.data.url}}><h1>{{child.data.title}}</h1></a>
 </div>
+</div>
+
 
 <!-- <ul class="posts-list" *ngFor="let child of post; let i = index"></ul>
 {{child.data.title}} -->

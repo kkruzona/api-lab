@@ -1,22 +1,38 @@
-body {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    margin: 20px;
+.postArea {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.postListing {
+.postListings {
     display: flex;
     flex-direction: column;
     border-bottom: grey;
-    margin-bottom: 20px;
+    margin: 20px;
+    width: 200px;
 }
 
 h1 {
     color:rgb(19, 128, 145);
+    font-size: 16px;
     cursor: pointer;
+    margin-top: 5px;
 }
 
 img {
     width: 200px;
     height: 200px;
 }
+
+a {
+    text-decoration: none;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 88%;
+    transition: 0.25s ease-in;
+  }
+
+  a:hover {
+    background-size: 100% 88%;
+  }
