@@ -1,10 +1,19 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    margin: 20px;
+}
+
 .postListing {
     display: flex;
     flex-direction: column;
+    border-bottom: grey;
+    margin-bottom: 20px;
 }
 
 h1 {
-    color:green;
+    color:rgb(19, 128, 145);
+    cursor: pointer;
 }
 
 img {
